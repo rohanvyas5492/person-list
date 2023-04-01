@@ -5,9 +5,163 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #edf0f5!important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/*------------------------------------------------------------------------------------------------------------*/
+nav.navbar {
+  background: #003049;
+  padding: 20px;
+}
+.navbar-brand {
+  color: #fff !important;
+  font-size: 1.5rem !important;
+  font-weight: 500;
+}
+.breadcrumb>a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding-right: 10px;
+  position: relative;
+}
+.breadcrumb{
+  padding: 20px 0!important;
+}
+.breadcrumb a:not(:first-child)::before{
+  content: '/';
+  left: -6px;
+  position: absolute;
+}
+.breadcrumb a:not(:first-child){
+  padding-left: 7px;
+}
+.card{
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px,
+    rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+    width: auto!important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    justify-content: center;
+    background-color: #fff;
+    margin-bottom: 20px;
+    position: relative;
+}
+img.card-img-top {
+  width: 100px;
+  margin: 20px auto;
+  border-radius: 50%;
+}
+.card-title.h5 {
+color: #034f77;
+  font-weight: 500;
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  text-align: center;
+}
+p.card-text {
+  color: #676565;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.card-text svg {
+  color: #04a1f2;
+}
+.card-text span {
+padding: 0 10px;
+  text-transform: capitalize;
+  font-size: .9rem;
+  color: #868484;
+  font-weight: 500;
+}
+.card-text {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.card-title:hover{
+  cursor: pointer;
+}
+button.edit-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #04a1f2;
+    transition: all .5s;
+}
+button.add-btn{
+    border: 0;
+      background: #04a1f2;
+      transition: all .5s;
+      padding: 10px 30px;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: auto;
+}
+.edit-btn svg{
+  color: #fff;
+    font-size: 1.2rem;
+}
+button.add-btn svg{
+  margin-top: -4px;
+    font-size: 1rem;
+}
+button.edit-btn:hover,
+button.add-btn:hover{
+  background-color: #003049;
+  transition: all .5s;
+}
+form {
+  max-width: 500px;
+  background: #fff;
+  padding: 50px;
+  margin: auto;
+}
+button.btn.btn-primary {
+  background: #04a1f2 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  width: 120px;
+  padding: 10px;
+  margin-top: 10px;
+  font-weight: 500;
+  transition: all .5s;
+}
+button.btn.btn-primary:hover{
+    background-color: #003049;
+      transition: all .5s;
+}
+.form-control {
+  border-radius: 0 !important;
+}
+.form-label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+.add_user-section {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.d-none{
+  display: none;
+}
+.user-image-preview{
+  text-align: center;
+  padding-bottom: 20px;
+}
+.user-image-preview img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  object-fit: cover;
 }
