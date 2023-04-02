@@ -57,7 +57,9 @@ const FormPage = () => {
       }
   }
   const uploadImage = (data)=>{
-   dispatch(setImage(data))
+    const { name, size, type } = data;
+    const imageDetails = { name, size, type, imageUrl: URL.createObjectURL(data) };
+    dispatch(setImage(imageDetails));
   }
   
   return (

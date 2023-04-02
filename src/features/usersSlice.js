@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const initialState = {
@@ -18,7 +17,6 @@ const initialState = {
     singleUser:[],
     imageUrl:'',
     uploadedFile:'',
-    uploadError:'',
     newUser:[]
 }  
 
@@ -88,13 +86,12 @@ const userSlice = createSlice({
         }
     },
     setImage(state,action){
-        const { name, size, type } = action.payload;
-        state.imageUrl = URL.createObjectURL(action.payload);
+        const { name, size, type, imageUrl } = action.payload;
+        state.imageUrl = imageUrl
         state.uploadedFile = { name, size, type };
-        state.uploadError = null;
     },
     addUser(state,action){
-        console.log(action.payload);
+        // console.log(action.payload);
         state.newUser = action.payload
     },
     clearFields(state){
@@ -127,7 +124,7 @@ extraReducers: (builder) => {
     })
     .addCase(addNewUser.fulfilled, (state, action) => {
       state.isLoading = false;
-      console.log(action.payload)
+      // console.log(action.payload)
       state.users.push(action.payload)
       toast.success('User Added')
       state.firstName = '';
@@ -147,7 +144,7 @@ extraReducers: (builder) => {
     })
     .addCase(editNewUser.fulfilled, (state, action) => {
       const updatedUser = action.payload
-      console.log(action.payload)
+      // console.log(action.payload)
       const index = state.users.findIndex(user => user.id === updatedUser.id);
       state.users[index] = updatedUser;
       toast.success('User Edited');

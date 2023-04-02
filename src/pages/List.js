@@ -1,9 +1,10 @@
-import { Col, Container, Row,Breadcrumb } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import PersonList from "../components/PersonList"
 import {  useDispatch, useSelector } from "react-redux"
-import { Link, useNavigate } from "react-router-dom"
+import {  useNavigate } from "react-router-dom"
 import {FaPlus} from 'react-icons/fa'
 import { clearFields } from "../features/usersSlice"
+import Breadcrumbs from "../components/Breadcrumbs"
 
 const List = () => {
   const {users} = useSelector((store=>store.users))
@@ -19,10 +20,7 @@ const List = () => {
         <Container>
         <Row>
           <Col md={12}>
-          <Breadcrumb>
-           <Link to="/">Form Page</Link>
-          <Link to ="/list">Person List Page</Link>
-          </Breadcrumb>
+          <Breadcrumbs />
           </Col>
           <Col md={12}>
             <div className="add_user-section">

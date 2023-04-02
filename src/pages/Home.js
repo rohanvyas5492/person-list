@@ -1,7 +1,7 @@
 import React from 'react'
-import { Col, Container, Row,Breadcrumb } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import FormPage from '../components/FormPage'
-import { Link } from 'react-router-dom'
+import Breadcrumbs from '../components/Breadcrumbs'
 
 const Home = () => {
   return (
@@ -9,10 +9,7 @@ const Home = () => {
       <Container>
         <Row>
           <Col md={12}>
-          <Breadcrumb>
-           <Link to="/">Form Page</Link>
-          <Link to ="/list">Person List Page</Link>
-          </Breadcrumb>
+          <Breadcrumbs />
           </Col>
           <Col>
             <FormPage />
